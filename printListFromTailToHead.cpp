@@ -30,5 +30,15 @@ class Solution{
 				nodes.pop();
 			}
 			return result;
+			
+			//思路2：按照正常顺序将结果放进result，利用了容器vector，最后再对其reverse;
+			vector<int> result;
+			ListNode* pNode = head;
+			while(pNode!=NULL){
+				result.push_back(pNode->val);
+				pNode= pNode->next;
+			}
+			reverse(result.begin(),result.end());
+			return result;
 		}	
 };
